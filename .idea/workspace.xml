@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="106f2d45-3501-48d0-9765-6650a5157b29" name="Changes" comment="first commit">
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/BeanRegistryDemo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyBenDefinition.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyImportBeanDefinitionRegistry.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyImportSelector.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng1InstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng2SmartInstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng3MergedBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng4SmartInstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng5InstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng6InstantiationAwareBeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng7BeanPostProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng8BeanPostProcessor.java" afterDir="false" />
+    <list default="true" id="106f2d45-3501-48d0-9765-6650a5157b29" name="Changes" comment="bean生命周期的回调">
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/applicationContext/SpringApplicationContextHolder.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/beanFactory/MyBeanFactoryAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/beanNameAware/Tiger.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/embeddedValueResolver/MyEmbeddedValueResolverAware.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/enviroment/EnvironmentAwareService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/event/EmailEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/event/EventListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/event/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/event/UserRegistryService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/messageSource/DemoBean.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/aware/messageSource/MainStart.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/resources/i18n/messages.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/resources/i18n/messages_en_US.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/service/PengService.java" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/service/PengService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -55,7 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "/Users/shipengju/Documents/spengju/spring-demo/extension/src/main/java/com/peng/demo/springbootdemo",
+    "last_opened_file_path": "/Users/shipengju/Documents/spengju/spring-demo/extension/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -71,18 +71,35 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extension/src/main/resources" />
       <recent name="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/springbootdemo" />
       <recent name="$PROJECT_DIR$/extension/src/main/java/com/peng" />
       <recent name="$PROJECT_DIR$/hand-writing/src/main/java" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/extension/src/main/resources/i18n" />
+    </key>
   </component>
-  <component name="RunManager" selected="Application.BeanRegistryDemo">
+  <component name="RunManager" selected="Application.com.peng.demo.spring.aware.resourceLoader.MainStart">
     <configuration name="BeanRegistryDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.peng.demo.spring.BeanRegistryDemo" />
       <module name="extension" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.peng.demo.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.peng.demo.spring.aware.messageSource.MainStart" />
+      <module name="extension" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.peng.demo.spring.aware.messageSource.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -103,8 +120,23 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="com.peng.demo.spring.aware.resourceLoader.MainStart" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.peng.demo.spring.aware.resourceLoader.MainStart" />
+      <module name="extension" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.peng.demo.spring.aware.resourceLoader.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.com.peng.demo.spring.aware.resourceLoader.MainStart" />
+        <item itemvalue="Application.MainStart" />
         <item itemvalue="Application.BeanRegistryDemo" />
         <item itemvalue="Application.TestSpringDemo" />
       </list>
@@ -119,7 +151,7 @@
       <option name="presentableId" value="Default" />
       <updated>1726455404956</updated>
       <workItem from="1726455406082" duration="632000" />
-      <workItem from="1726456057410" duration="8558000" />
+      <workItem from="1726456057410" duration="10532000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -137,7 +169,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726456759012</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="bean生命周期的回调">
+      <option name="closed" value="true" />
+      <created>1726474237357</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1726474237357</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -145,7 +185,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="first commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+    <MESSAGE value="bean生命周期的回调" />
+    <option name="LAST_COMMIT_MESSAGE" value="bean生命周期的回调" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

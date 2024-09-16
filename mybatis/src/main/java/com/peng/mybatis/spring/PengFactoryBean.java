@@ -17,7 +17,6 @@ public class PengFactoryBean implements FactoryBean {
     private SqlSession sqlSession;
 
 
-    @Autowired
     public void setSqlSession(SqlSessionFactory sqlSessionFactory) {
         sqlSessionFactory.getConfiguration().addMapper(mapperInterface);
         this.sqlSession = sqlSessionFactory.openSession();

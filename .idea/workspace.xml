@@ -4,7 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="106f2d45-3501-48d0-9765-6650a5157b29" name="Changes" comment="" />
+    <list default="true" id="106f2d45-3501-48d0-9765-6650a5157b29" name="Changes" comment="first commit">
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/BeanRegistryDemo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyBenDefinition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyImportBeanDefinitionRegistry.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanDefinition/MyImportSelector.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng1InstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng2SmartInstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng3MergedBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng4SmartInstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng5InstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng6InstantiationAwareBeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng7BeanPostProcessor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/beanPostProcessor/Peng8BeanPostProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/service/PengService.java" beforeDir="false" afterPath="$PROJECT_DIR$/extension/src/main/java/com/peng/demo/spring/service/PengService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -16,6 +31,9 @@
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
@@ -42,6 +60,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
     "spring.configuration.checksum": "01b08d59480a40a6a26afd0450965986",
     "vue.rearranger.settings.migration": "true"
@@ -57,7 +76,20 @@
       <recent name="$PROJECT_DIR$/hand-writing/src/main/java" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.BeanRegistryDemo">
+    <configuration name="BeanRegistryDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.peng.demo.spring.BeanRegistryDemo" />
+      <module name="extension" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.peng.demo.spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="TestSpringDemo" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.peng.demo.spring.TestSpringDemo" />
       <module name="extension" />
@@ -73,6 +105,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.BeanRegistryDemo" />
         <item itemvalue="Application.TestSpringDemo" />
       </list>
     </recent_temporary>
@@ -86,11 +119,53 @@
       <option name="presentableId" value="Default" />
       <updated>1726455404956</updated>
       <workItem from="1726455406082" duration="632000" />
-      <workItem from="1726456057410" duration="447000" />
+      <workItem from="1726456057410" duration="8558000" />
     </task>
+    <task id="LOCAL-00001" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1726456719687</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1726456719687</updated>
+    </task>
+    <task id="LOCAL-00002" summary="first commit">
+      <option name="closed" value="true" />
+      <created>1726456759012</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1726456759012</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="first commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="first commit" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/local/apache-maven-3.8.6/repository/org/springframework/spring-context/5.3.20/spring-context-5.3.20.jar!/org/springframework/context/support/PostProcessorRegistrationDelegate.class</url>
+          <line>77</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/local/apache-maven-3.8.6/repository/org/springframework/spring-context/5.3.20/spring-context-5.3.20.jar!/org/springframework/context/support/PostProcessorRegistrationDelegate.class</url>
+          <line>93</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>jar://$USER_HOME$/local/apache-maven-3.8.6/repository/org/springframework/spring-context/5.3.20/spring-context-5.3.20.jar!/org/springframework/context/support/PostProcessorRegistrationDelegate.class</url>
+          <line>114</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

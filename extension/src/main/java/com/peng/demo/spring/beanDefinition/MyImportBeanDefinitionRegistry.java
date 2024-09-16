@@ -16,6 +16,11 @@ import java.util.Map;
  * @Author: spengju
  * @Slogan: Day day no bug.
  * @Date: 2024/9/16 12:45
+ *
+ * 局限性:
+ *  ImportBeanDefinitionRegistrar不是一个bean， 没有bean的生命周期， 没有依赖注入功能。
+ * 优点：
+ *  可以获取当前@Import注解所在类的所有注解信息
  */
 public class MyImportBeanDefinitionRegistry implements ImportBeanDefinitionRegistrar {
     @Override

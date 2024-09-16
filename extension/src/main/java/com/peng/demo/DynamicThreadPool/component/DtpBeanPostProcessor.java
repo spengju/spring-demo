@@ -1,7 +1,7 @@
-package com.peng.demo.springbootdemo.component;
+package com.peng.demo.DynamicThreadPool.component;
 
-import com.peng.demo.springbootdemo.domain.DtpThreadPoolExecutor;
-import com.peng.demo.springbootdemo.service.DtpRegistry;
+import com.peng.demo.DynamicThreadPool.domain.DtpThreadPoolExecutor;
+import com.peng.demo.DynamicThreadPool.service.DtpRegistry;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;

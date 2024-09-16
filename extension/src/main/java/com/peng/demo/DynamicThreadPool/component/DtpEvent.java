@@ -1,6 +1,6 @@
-package com.peng.demo.springbootdemo.component;
+package com.peng.demo.DynamicThreadPool.component;
 
-import com.peng.demo.springbootdemo.properties.ThreadPoolProperties;
+import com.peng.demo.DynamicThreadPool.properties.ThreadPoolProperties;
 import org.springframework.context.ApplicationEvent;
 
 /***

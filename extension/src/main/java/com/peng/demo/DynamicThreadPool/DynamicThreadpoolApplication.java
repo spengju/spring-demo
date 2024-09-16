@@ -1,6 +1,6 @@
-package com.peng.demo.springbootdemo;
+package com.peng.demo.DynamicThreadPool;
 
-import com.peng.demo.springbootdemo.annotation.EnableDynamicThreadPool;
+import com.peng.demo.DynamicThreadPool.annotation.EnableDynamicThreadPool;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

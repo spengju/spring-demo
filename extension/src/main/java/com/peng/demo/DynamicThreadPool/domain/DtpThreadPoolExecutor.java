@@ -1,7 +1,7 @@
-package com.peng.demo.springbootdemo.domain;
+package com.peng.demo.DynamicThreadPool.domain;
 
 
-import com.peng.demo.springbootdemo.properties.ThreadPoolProperties;
+import com.peng.demo.DynamicThreadPool.properties.ThreadPoolProperties;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.ThreadPoolExecutor;

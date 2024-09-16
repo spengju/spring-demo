@@ -1,6 +1,6 @@
-package com.peng.demo.springbootdemo.controller;
+package com.peng.demo.DynamicThreadPool.controller;
 
-import com.peng.demo.springbootdemo.domain.DtpThreadPoolExecutor;
+import com.peng.demo.DynamicThreadPool.domain.DtpThreadPoolExecutor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

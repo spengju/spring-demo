@@ -1,7 +1,7 @@
-package com.peng.demo.springbootdemo.service;
+package com.peng.demo.DynamicThreadPool.service;
 
 
-import com.peng.demo.springbootdemo.properties.ThreadPoolProperties;
+import com.peng.demo.DynamicThreadPool.properties.ThreadPoolProperties;
 
 import java.util.Collection;
 import java.util.Map;

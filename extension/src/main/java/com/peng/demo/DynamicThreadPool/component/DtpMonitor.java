@@ -1,6 +1,6 @@
-package com.peng.demo.springbootdemo.component;
+package com.peng.demo.DynamicThreadPool.component;
 
-import com.peng.demo.springbootdemo.service.DtpRegistry;
+import com.peng.demo.DynamicThreadPool.service.DtpRegistry;
 import org.springframework.context.SmartLifecycle;
 
 import java.util.concurrent.Executors;

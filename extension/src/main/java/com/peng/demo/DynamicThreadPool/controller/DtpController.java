@@ -1,7 +1,7 @@
-package com.peng.demo.springbootdemo.controller;
+package com.peng.demo.DynamicThreadPool.controller;
 
-import com.peng.demo.springbootdemo.component.DtpEvent;
-import com.peng.demo.springbootdemo.properties.ThreadPoolProperties;
+import com.peng.demo.DynamicThreadPool.component.DtpEvent;
+import com.peng.demo.DynamicThreadPool.properties.ThreadPoolProperties;
 import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.web.bind.annotation.PostMapping;

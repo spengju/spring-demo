@@ -1,8 +1,8 @@
-package com.peng.demo.springbootdemo.component;
+package com.peng.demo.DynamicThreadPool.component;
 
-import com.peng.demo.springbootdemo.domain.DtpThreadPoolExecutor;
-import com.peng.demo.springbootdemo.properties.DtpProperties;
-import com.peng.demo.springbootdemo.properties.ThreadPoolProperties;
+import com.peng.demo.DynamicThreadPool.domain.DtpThreadPoolExecutor;
+import com.peng.demo.DynamicThreadPool.properties.DtpProperties;
+import com.peng.demo.DynamicThreadPool.properties.ThreadPoolProperties;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.support.AbstractBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionBuilder;

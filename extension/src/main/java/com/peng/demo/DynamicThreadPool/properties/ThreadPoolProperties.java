@@ -1,4 +1,4 @@
-package com.peng.demo.springbootdemo.properties;
+package com.peng.demo.DynamicThreadPool.properties;
 
 import lombok.Data;
 

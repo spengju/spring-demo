@@ -1,6 +1,6 @@
-package com.peng.demo.springbootdemo.annotation;
+package com.peng.demo.DynamicThreadPool.annotation;
 
-import com.peng.demo.springbootdemo.component.DtpImportSelector;
+import com.peng.demo.DynamicThreadPool.component.DtpImportSelector;
 import org.springframework.context.annotation.Import;
 
 import java.lang.annotation.ElementType;

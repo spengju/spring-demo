@@ -1,4 +1,4 @@
-package com.peng.demo.springbootdemo.component;
+package com.peng.demo.DynamicThreadPool.component;
 
 import org.springframework.context.annotation.DeferredImportSelector;
 import org.springframework.core.type.AnnotationMetadata;

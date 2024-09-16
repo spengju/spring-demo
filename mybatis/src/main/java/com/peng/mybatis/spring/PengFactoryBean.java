@@ -16,13 +16,15 @@ public class PengFactoryBean implements FactoryBean {
 
     private SqlSession sqlSession;
 
-    public PengFactoryBean(Class mapperInterface) {
-        this.mapperInterface = mapperInterface;
-    }
+
     @Autowired
     public void setSqlSession(SqlSessionFactory sqlSessionFactory) {
         sqlSessionFactory.getConfiguration().addMapper(mapperInterface);
         this.sqlSession = sqlSessionFactory.openSession();
+    }
+
+    public PengFactoryBean(Class mapperInterface) {
+        this.mapperInterface = mapperInterface;
     }
 
     @Override

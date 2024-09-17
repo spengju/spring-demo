@@ -8,7 +8,7 @@ import org.springframework.stereotype.Component;
  * @Date: 2024/9/17 11:00
  */
 @Component
-public class UserService implements UserInterface{
+public class UserService{
     public void test() {
         System.out.println("test...");
     }

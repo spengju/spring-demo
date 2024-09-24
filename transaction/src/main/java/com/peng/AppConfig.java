@@ -30,6 +30,11 @@ public class AppConfig {
     public PlatformTransactionManager platformTransactionManager() {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
         transactionManager.setDataSource(dataSource());
+        /**
+         * 部分失败的情况下全局回滚，默认是true
+         * false -->  部分失败不回滚
+         */
+        transactionManager.setGlobalRollbackOnParticipationFailure(true);
         return transactionManager;
     }
 

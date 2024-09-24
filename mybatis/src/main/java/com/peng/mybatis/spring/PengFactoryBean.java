@@ -36,6 +36,7 @@ public class PengFactoryBean implements FactoryBean {
 //            }
 //        });
 //        return proxyInstance;
+        System.out.println("-----------");
         return sqlSession.getMapper(mapperInterface);
     }
 

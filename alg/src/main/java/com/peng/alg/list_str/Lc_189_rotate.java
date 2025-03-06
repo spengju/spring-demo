@@ -20,15 +20,53 @@ public class Lc_189_rotate {
         rotate(nums, 3);
     }
 
+    /**
+     * 可以使用额外的数组来将每个元素放至正确的位置。用 n 表示数组的长度，我们遍历原数组，将原数组下标为 i 的元素放至新数组下标为 (i+k)modn 的位置，最后将新数组拷贝至原数组即可。
+     * @param nums
+     * @param k
+     */
     public static void rotate(int[] nums, int k) {
         int n = nums.length;
-        int end = nums[n - 1];
-        for (int i = 0; i < k; i++) {
-            for (int j = n - 1; j > 0; j--) {
-                nums[j] = nums[j - 1];
-            }
-            nums[0] = end;
-            end = nums[n - 1];
+        int[] newArr = new int[n];
+        for (int i = 0; i < n; ++i) {
+            newArr[(i + k) % n] = nums[i];
+        }
+        System.arraycopy(newArr, 0, nums, 0, n);
+    }
+
+    /**
+     * 环状替换
+     * @param nums
+     * @param k
+     */
+    public static void rotate2(int[] nums, int k) {
+        int n = nums.length;
+        int[] newArr = new int[n];
+        for (int i = 0; i < n; ++i) {
+            newArr[(i + k) % n] = nums[i];
+        }
+        System.arraycopy(newArr, 0, nums, 0, n);
+    }
+
+    /**
+     * 数组翻转
+     * @param nums
+     * @param k
+     */
+    public void rotate3(int[] nums, int k) {
+        k %= nums.length;
+        reverse(nums, 0, nums.length - 1);
+        reverse(nums, 0, k - 1);
+        reverse(nums, k, nums.length - 1);
+    }
+
+    public void reverse(int[] nums, int start, int end) {
+        while (start < end) {
+            int temp = nums[start];
+            nums[start] = nums[end];
+            nums[end] = temp;
+            start += 1;
+            end -= 1;
         }
     }
 }

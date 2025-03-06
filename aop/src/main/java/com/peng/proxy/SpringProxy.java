@@ -22,7 +22,7 @@ public class SpringProxy {
         UserService target = new UserService();
         ProxyFactory proxyFactory = new ProxyFactory();
         proxyFactory.setTarget(target);
-        proxyFactory.setInterfaces(UserInterface.class);
+//        proxyFactory.setInterfaces(UserInterface.class);
         proxyFactory.addAdvice(new MethodBeforeAdvice() {
             @Override
             public void before(Method method, Object[] args, Object target) throws Throwable {

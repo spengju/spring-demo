@@ -2,6 +2,9 @@ package com.peng.spring;
 
 import com.peng.spring.service.PengService;
 import org.springframework.beans.factory.annotation.AnnotatedGenericBeanDefinition;
+import org.springframework.beans.factory.config.BeanDefinition;
+import org.springframework.beans.factory.support.AbstractBeanDefinition;
+import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.context.annotation.AnnotatedBeanDefinitionReader;
 import org.springframework.context.annotation.ClassPathBeanDefinitionScanner;
@@ -21,8 +24,12 @@ public class TestSpringDemo {
 
         //读取配置
         AnnotatedBeanDefinitionReader reader = new AnnotatedBeanDefinitionReader(beanFactory);
+        BeanDefinitionBuilder builder = BeanDefinitionBuilder.genericBeanDefinition(PengService.class);
         reader.register(TestSpringDemo.class);
-
+        BeanDefinition definition = builder.getBeanDefinition();
+//        definition.setBeanClassName("spengju");
+//        reader.register(definition);
+        beanFactory.registerBeanDefinition("spengju",definition);
         //获取
         AnnotatedGenericBeanDefinition beanDefinition = (AnnotatedGenericBeanDefinition) beanFactory.getBeanDefinition("testSpringDemo");
         AnnotationMetadata metadata = beanDefinition.getMetadata();
@@ -43,7 +50,7 @@ public class TestSpringDemo {
         //实例化所有单例bean
 //        beanFactory.preInstantiateSingletons();
 
-        PengService bean = (PengService) beanFactory.getBean(Introspector.decapitalize(PengService.class.getSimpleName()));
+        PengService bean = (PengService) beanFactory.getBean("spengju");
         System.out.println(bean.getName());
     }
 }

@@ -15,6 +15,7 @@
         <module>aop</module>
         <module>transaction</module>
         <module>Test</module>
+        <module>alg</module>
     </modules>
 
     <properties>

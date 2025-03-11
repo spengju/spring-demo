@@ -1,5 +1,7 @@
 package com.peng.alg.sort;
 
+import java.util.Arrays;
+
 /**
  * @Author: spengju
  * @Slogan: Day day no bug.
@@ -12,20 +14,24 @@ package com.peng.alg.sort;
  * <p>
  * 重复第二步，直到所有元素均排序完毕。
  */
-public class SelectionSort {
-    public static void sort(int[] sourceArray) {
-        for (int i = 0; i < sourceArray.length; i++) {
+public class SelectionSort implements IArraySort{
+
+    @Override
+    public int[] sort(int[] sourceArray) throws Exception {
+        int[] arr = Arrays.copyOf(sourceArray, sourceArray.length);
+        for (int i = 0; i < arr.length; i++) {
             int minIndex = i;
-            for (int j = i + 1; j < sourceArray.length; j++) {
-                if (sourceArray[j] < sourceArray[minIndex]) {
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < arr[minIndex]) {
                     minIndex = j;
                 }
             }
             if (minIndex != i) {
-                int tmp = sourceArray[i];
-                sourceArray[i] = sourceArray[minIndex];
-                sourceArray[minIndex] = tmp;
+                int tmp = arr[i];
+                arr[i] = arr[minIndex];
+                arr[minIndex] = tmp;
             }
         }
+        return arr;
     }
 }

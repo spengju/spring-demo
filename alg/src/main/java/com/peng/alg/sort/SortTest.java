@@ -10,9 +10,9 @@ import java.util.Arrays;
  */
 public class SortTest {
     public static void main(String[] args) throws Exception {
-        int[] arr = {7, 1, 5, 3, 6, 4};
+        int[] arr = {7, 1, 5, 3, 6, 4, 2, 8, 9};
 //        Bubble.bubbleSort(arr);
-        IArraySort arraySort=new BubbleSort();
+        IArraySort arraySort = new InsertSort();
         int[] sort = arraySort.sort(arr);
         Arrays.stream(sort).forEach(System.out::println);
 

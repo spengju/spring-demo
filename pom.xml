@@ -16,6 +16,8 @@
         <module>transaction</module>
         <module>Test</module>
         <module>alg</module>
+        <module>mini-spring</module>
+        <module>demo</module>
     </modules>
 
     <properties>

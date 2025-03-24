@@ -1,7 +1,6 @@
 package com.peng.service;
 
-import com.peng.mini.spring.Component;
-import com.peng.mini.spring.Scope;
+import com.peng.mini.spring.*;
 
 /**
  * @Author: spengju
@@ -11,5 +10,42 @@ import com.peng.mini.spring.Scope;
  */
 @Component("userService")
 //@Scope("prototype")
-public class UserService {
+public class UserService implements InitializingBean ,BeanNameAware,ApplicationContextAware {
+
+    private ApplicationContext applicationContext;
+
+    @Autowired
+    private OrderService orderService;
+
+    private String name;
+
+    public void test() {
+//        System.out.println(orderService);
+        System.out.println(applicationContext);
+        System.out.println(applicationContext.getBean("orderService"));
+    }
+
+    @Override
+    public void afterPropertiesSet() throws Exception {
+        System.out.println("afterPropertiesSet...");
+    }
+
+    @PostConstruct
+    public void a(){
+        System.out.println("PostConstruct...");
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    @Override
+    public void setBeanName(String name) {
+        this.name = name;
+    }
+
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) {
+        this.applicationContext = applicationContext;
+    }
 }

@@ -1,6 +1,7 @@
 package com.peng;
 
 import com.peng.mini.spring.PengApplicationContext;
+import com.peng.service.UserService;
 
 /**
  * @Author: spengju
@@ -11,8 +12,8 @@ import com.peng.mini.spring.PengApplicationContext;
 public class Main {
     public static void main(String[] args) {
         PengApplicationContext context=new PengApplicationContext(MyConfig.class);
-        System.out.println(context.getBean("userService"));
-        System.out.println(context.getBean("userService"));
-        System.out.println(context.getBean("userService"));
+        UserService userService = (UserService) context.getBean("userService");
+        userService.test();
+        System.out.println(userService.getName());
     }
 }

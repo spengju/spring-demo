@@ -2,7 +2,9 @@ package com.peng.mini.spring;
 
 import java.beans.Introspector;
 import java.io.File;
+import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 import java.net.URL;
 import java.util.HashMap;
@@ -15,7 +17,7 @@ import java.util.Objects;
  * @Date: 2025/3/22 16:05
  * @Desc:
  */
-public class PengApplicationContext {
+public class PengApplicationContext implements ApplicationContext {
 
     private final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
@@ -40,11 +42,9 @@ public class PengApplicationContext {
                 if (file.isDirectory()) {
                     for (File listFile : Objects.requireNonNull(file.listFiles())) {
                         String filePath = listFile.getPath();
-                        System.out.println(filePath);
                         filePath = filePath.substring(filePath.indexOf("com"), filePath.lastIndexOf(".class"));
                         String classPath = filePath.replace("/", ".");
                         Class<?> clazz = classLoader.loadClass(classPath);
-                        System.out.println(clazz);
 
                         if (clazz.isAnnotationPresent(Component.class)) {
                             BeanDefinition beanDefinition = new BeanDefinition();
@@ -74,6 +74,7 @@ public class PengApplicationContext {
         }
     }
 
+    @Override
     public Object getBean(String beanName) {
         if (!beanDefinitionMap.containsKey(beanName)) {
             throw new RuntimeException("beanName不存在");
@@ -94,15 +95,42 @@ public class PengApplicationContext {
     public Object createBean(String beanName, BeanDefinition beanDefinition) {
         Class beanClass = beanDefinition.getBeanClass();
         try {
+            //实例化 通过构造方法得到对象
             Object instance = beanClass.getConstructor().newInstance();
+
+            //依赖注入
+            for (Field field : beanClass.getDeclaredFields()) {
+                if (field.isAnnotationPresent(Autowired.class)) {
+                    String name = field.getName();
+                    field.setAccessible(true);
+                    field.set(instance, getBean(name));
+                }
+            }
+
+            for (Method method : beanClass.getDeclaredMethods()) {
+                if (method.isAnnotationPresent(PostConstruct.class)) {
+                    method.invoke(instance);
+                }
+            }
+
+            //初始化 回调
+            if (instance instanceof InitializingBean) {
+                ((InitializingBean) instance).afterPropertiesSet();
+            }
+
+            if (instance instanceof BeanNameAware) {
+                ((BeanNameAware) instance).setBeanName(beanName);
+            }
+
+            if (instance instanceof ApplicationContextAware) {
+                ((ApplicationContextAware) instance).setApplicationContext(this);
+            }
+
+            //初始化后
+
+
             return instance;
-        } catch (InstantiationException e) {
-            throw new RuntimeException(e);
-        } catch (IllegalAccessException e) {
-            throw new RuntimeException(e);
-        } catch (InvocationTargetException e) {
-            throw new RuntimeException(e);
-        } catch (NoSuchMethodException e) {
+        } catch (Exception e) {
             throw new RuntimeException(e);
         }
     }

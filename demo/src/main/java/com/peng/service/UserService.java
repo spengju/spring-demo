@@ -14,15 +14,16 @@ public class UserService implements InitializingBean ,BeanNameAware,ApplicationC
 
     private ApplicationContext applicationContext;
 
-    @Autowired
+//    @Autowired
     private OrderService orderService;
 
     private String name;
 
     public void test() {
 //        System.out.println(orderService);
-        System.out.println(applicationContext);
-        System.out.println(applicationContext.getBean("orderService"));
+//        System.out.println(applicationContext);
+//        System.out.println(applicationContext.getBean("orderService"));
+        System.out.println("hello peng");
     }
 
     @Override

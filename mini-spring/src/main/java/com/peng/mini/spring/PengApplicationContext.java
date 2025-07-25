@@ -7,9 +7,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.net.URISyntaxException;
 import java.net.URL;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Objects;
+import java.util.*;
 
 /**
  * @Author: spengju
@@ -22,6 +20,8 @@ public class PengApplicationContext implements ApplicationContext {
     private final Map<String, BeanDefinition> beanDefinitionMap = new HashMap<>();
 
     private final Map<String, Object> singletonObjects = new HashMap<>();
+
+    private final List<BeanPostProcessor> beanPostProcessorList = new ArrayList<>();
 
     public PengApplicationContext(Class configClass) {
         scan(configClass);
@@ -77,7 +77,7 @@ public class PengApplicationContext implements ApplicationContext {
     @Override
     public Object getBean(String beanName) {
         if (!beanDefinitionMap.containsKey(beanName)) {
-            throw new RuntimeException("beanName不存在");
+            throw new RuntimeException(beanName + "不存在");
         }
         BeanDefinition beanDefinition = beanDefinitionMap.get(beanName);
         if (beanDefinition.getScope().equals("singleton")) {
@@ -126,7 +126,12 @@ public class PengApplicationContext implements ApplicationContext {
                 ((ApplicationContextAware) instance).setApplicationContext(this);
             }
 
+//           if (instance instanceof BeanPostProcessor) {
+//               ((BeanPostProcessor) instance).postProcessAfterInitialization(instance, beanName);
+//           }
             //初始化后
+            AopBeanPostProcessor aopBeanPostProcessor = new AopBeanPostProcessor();
+            aopBeanPostProcessor.postProcessAfterInitialization(instance, beanName);
 
 
             return instance;

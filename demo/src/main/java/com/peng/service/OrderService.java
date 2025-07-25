@@ -8,6 +8,6 @@ import com.peng.mini.spring.Component;
  * @Date: 2025/3/22 16:08
  * @Desc:
  */
-@Component
+//@Component
 public class OrderService {
 }

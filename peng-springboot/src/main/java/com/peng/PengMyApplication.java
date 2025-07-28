@@ -1,5 +1,6 @@
 package com.peng;
 
+import com.peng.server.WebServer;
 import org.apache.catalina.*;
 import org.apache.catalina.connector.Connector;
 import org.apache.catalina.core.StandardContext;
@@ -9,6 +10,8 @@ import org.apache.catalina.startup.Tomcat;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.web.context.support.AnnotationConfigWebApplicationContext;
 import org.springframework.web.servlet.DispatcherServlet;
+
+import java.util.Map;
 
 /**
  * @Author: spengju
@@ -26,43 +29,60 @@ public class PengMyApplication {
         context.refresh();
 
 
-        //启动tomcat
-        startTomcat(context);
+        //启动tomcat jetty
+//        startTomcat(context);
+        WebServer webServer = getWebServer(context);
+        webServer.start();
     }
 
-    private static void startTomcat(AnnotationConfigWebApplicationContext webApplicationContext) {
-        Tomcat tomcat = new Tomcat();
+    private static WebServer getWebServer(AnnotationConfigWebApplicationContext applicationContext) {
 
-        Server server = tomcat.getServer();
-        Service service = server.findService("Tomcat");
+        Map<String, WebServer> beansOfType = applicationContext.getBeansOfType(WebServer.class);
 
-        Connector connector = new Connector();
-        connector.setPort(8081);
-
-        Engine engine = new StandardEngine();
-        engine.setDefaultHost("localhost");
-
-        Host host = new StandardHost();
-        host.setName("localhost");
-
-        String contextPath = "";
-        Context context = new StandardContext();
-        context.setPath(contextPath);
-        context.addLifecycleListener(new Tomcat.FixContextListener());
-
-        host.addChild(context);
-        engine.addChild(host);
-
-        service.setContainer(engine);
-        service.addConnector(connector);
-
-        tomcat.addServlet(contextPath, "dispatcher", new DispatcherServlet(webApplicationContext));
-        context.addServletMappingDecoded("/*", "dispatcher");
-
-        try {
-            tomcat.start();
-        } catch (LifecycleException e) {
-            e.printStackTrace();
+        if (beansOfType.isEmpty()) {
+            throw new NullPointerException();
         }
+
+        if (beansOfType.size() > 1) {
+            throw new IllegalStateException();
+        }
+
+        return beansOfType.values().stream().findFirst().get();
     }
+
+//    private static void startTomcat(AnnotationConfigWebApplicationContext webApplicationContext) {
+//        Tomcat tomcat = new Tomcat();
+//
+//        Server server = tomcat.getServer();
+//        Service service = server.findService("Tomcat");
+//
+//        Connector connector = new Connector();
+//        connector.setPort(8081);
+//
+//        Engine engine = new StandardEngine();
+//        engine.setDefaultHost("localhost");
+//
+//        Host host = new StandardHost();
+//        host.setName("localhost");
+//
+//        String contextPath = "";
+//        Context context = new StandardContext();
+//        context.setPath(contextPath);
+//        context.addLifecycleListener(new Tomcat.FixContextListener());
+//
+//        host.addChild(context);
+//        engine.addChild(host);
+//
+//        service.setContainer(engine);
+//        service.addConnector(connector);
+//
+//        tomcat.addServlet(contextPath, "dispatcher", new DispatcherServlet(webApplicationContext));
+//        context.addServletMappingDecoded("/*", "dispatcher");
+//
+//        try {
+//            tomcat.start();
+//        } catch (LifecycleException e) {
+//            e.printStackTrace();
+//        }
+//    }
 }

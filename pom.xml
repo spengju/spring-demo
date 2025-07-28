@@ -18,6 +18,8 @@
         <module>alg</module>
         <module>mini-spring</module>
         <module>demo</module>
+        <module>peng-springboot</module>
+        <module>springboot-demo</module>
     </modules>
 
     <properties>
